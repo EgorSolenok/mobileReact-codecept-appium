@@ -1,0 +1,36 @@
+{
+  "name": "mobilereact-codecept-appium",
+  "version": "1.0.0",
+  "description": "",
+  "main": "index.js",
+  "scripts": {
+    "test": "echo \"Error: no test specified\" && exit 1"
+  },
+  "repository": {
+    "type": "git",
+    "url": "git+https://github.com/EgorSolenok/mobileReact-codecept-appium.git"
+  },
+  "keywords": [],
+  "author": "",
+  "license": "ISC",
+  "bugs": {
+    "url": "https://github.com/EgorSolenok/mobileReact-codecept-appium/issues"
+  },
+  "homepage": "https://github.com/EgorSolenok/mobileReact-codecept-appium#readme",
+  "devDependencies": {
+    "@typescript-eslint/eslint-plugin": "^5.41.0",
+    "@typescript-eslint/parser": "^5.41.0",
+    "codeceptjs": "^3.3.6",
+    "eslint": "^8.26.0",
+    "eslint-config-appium": "^4.7.0",
+    "eslint-config-prettier": "^8.5.0",
+    "eslint-plugin-codeceptjs": "^1.3.0",
+    "faker": "^6.6.6",
+    "prettier": "2.7.1",
+    "rosie": "^2.1.0",
+    "webdriverio": "^6.12.1"
+  },
+  "dependencies": {
+    "@reportportal/agent-js-codecept": "^0.2.4"
+  }
+}

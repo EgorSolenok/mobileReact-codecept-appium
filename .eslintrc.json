@@ -1,0 +1,32 @@
+{
+  "env": {
+    "browser": true,
+    "commonjs": true,
+    "es2021": true,
+    "mocha": true,
+    "node": true,
+    "codeceptjs/codeceptjs": true
+  },
+  "extends": [
+    "eslint:recommended",
+    //    "plugin:@typescript-eslint/recommended",
+    "prettier",
+    "plugin:codeceptjs/recommended"
+    //    "appium"
+  ],
+  "overrides": [],
+  //  "parser": "@typescript-eslint/parser",
+  "parserOptions": {
+    "ecmaVersion": 2015
+  },
+  "plugins": ["@typescript-eslint", "codeceptjs"],
+  "rules": {
+    //    "@typescript-eslint/no-var-requires": 0,
+    "codeceptjs/no-actor-in-scenario": 2,
+    "indent": ["error", 2],
+    "linebreak-style": ["error", "unix"],
+    "quotes": ["error", "double"],
+    "semi": ["error", "always"],
+    "no-unused-vars": "off"
+  }
+}
