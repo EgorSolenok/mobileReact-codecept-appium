@@ -33,6 +33,7 @@ exports.config = {
     sidebarPage: "./pages/sidebarPage.js",
     mainPage: "./pages/mainPage.js",
     loginPage: "./pages/loginPage.js",
+    loginStep: "./steps/loginStep.js",
   },
   name: "mobileReact-codecept-appium",
 };

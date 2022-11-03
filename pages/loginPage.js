@@ -7,28 +7,31 @@ module.exports = {
   },
   LOGIN_BUTTON: "~Login button",
   VALID_USERNAME: "~bob@example.com-autofill",
-  INVALID_USERNAME: "~alice@example.com (locked out)-autofill",
-  VALID_PASSWORD: "~login screen",
+  INVALID_USERNAME: "alice@example.com (locked out)-autofill",
+  VALID_PASSWORD: "//*[@content-desc='~login screen']",
+  CART_HEADER: "//*[@content-desc=\"container header\"]",
+  CART_SCREEN: "//*[@content-desc=\"cart screen\"]",
+  GO_SHOPPING_BUTTON: "//*[@content-desc=\"Go Shopping button\"]",
 
-  async getValidUsername() {
-    I.waitForVisible(this.VALID_USERNAME);
-    return await I.grabTextFrom(this.VALID_USERNAME);
+  enterValidUserData() {
+    I.click(this.VALID_USERNAME);
+    I.click(this.LOGIN_BUTTON);
   },
-  async getInvalidUsername() {
-    I.waitForVisible(this.VALID_USERNAME);
-    return await I.grabTextFrom(this.INVALID_USERNAME);
+
+  enterInvalidUserData() {
+    I.click(this.INVALID_USERNAME);
+    I.click(this.LOGIN_BUTTON);
   },
-  async getValidPassword() {
-    I.waitForVisible(this.VALID_PASSWORD);
-    return await I.grabTextFrom(this.VALID_PASSWORD);
-  },
-  async typeValidAuthData() {
-    // TODO: implement getData methods
-    // const username = await this.getValidUsername()
-    // const password = await this.getValidPassword()
-    const username = 'bob@example.com'
-    const password = '10203040'
-    I.fillField(this.FIELDS.USERNAME, username);
-    I.fillField(this.FIELDS.PASSWORD, password);
+
+  authorizedUserShouldSeeEmptyCart() {
+    I.dontSee(this.FIELDS.USERNAME);
+    I.dontSee(this.FIELDS.PASSWORD);
+
+    I.seeElement(this.GO_SHOPPING_BUTTON);
+    I.see("No Items", locate(undefined).inside(this.CART_HEADER));
+    I.see(
+      "Oh no! Your cart is empty. Fill it up with swag to complete your purchase.",
+      locate(undefined).inside(this.CART_SCREEN)
+    );
   },
 };

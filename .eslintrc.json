@@ -2,7 +2,7 @@
   "env": {
     "browser": true,
     "commonjs": true,
-    "es2021": true,
+    "es6": true,
     "mocha": true,
     "node": true,
     "codeceptjs/codeceptjs": true
@@ -17,7 +17,7 @@
   "overrides": [],
   //  "parser": "@typescript-eslint/parser",
   "parserOptions": {
-    "ecmaVersion": 2015
+    "ecmaVersion": 8
   },
   "plugins": ["@typescript-eslint", "codeceptjs"],
   "rules": {
